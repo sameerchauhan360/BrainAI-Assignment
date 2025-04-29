@@ -8,3 +8,4 @@ streamlit
 psycopg2
 gunicorn
 whitenoise
+python-dotenv
