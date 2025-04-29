@@ -29,12 +29,13 @@ Follow these steps to set up and run the project locally:
 ```bash
 git clone [https://github.com/<your-username>/brainai-assignment.git](https://github.com/sameerchauhan360/BrainAI-Assignment.git)
 cd brainai-assignment
-
+```
 ### 2. Create and Activate a Virtual Environment
 # On Windows
+```
 python -m venv venv
 venv\Scripts\activate
-
+```
 # On macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
