@@ -31,12 +31,12 @@ git clone https://github.com/sameerchauhan360/BrainAI-Assignment.git
 cd brainai-assignment
 ```
 ### 2. Create and Activate a Virtual Environment
-# On Windows
+## On Windows
 ```
 python -m venv venv
 venv\Scripts\activate
 ```
-# On macOS/Linux
+## On macOS/Linux
 ```
 python3 -m venv venv
 source venv/bin/activate
@@ -59,14 +59,13 @@ python manage.py runserver
 ## 🧪 Notes:
 - This project uses SQLite3 as the default database.
 - ML model files (mental_health_model.pkl, label_encoder.pkl) are pre-trained and loaded during API calls.
-- The project is deployed via Railway [(add the live link if available).](https://brainai-project.up.railway.app/api/predict/)
 
 ## 📡 API Documentation
 
 ### 📍 Base URL
 All endpoints are prefixed with:
 
-http://<your-domain>/api/
+`http://<your-domain>/api/`
 
 
 ### 🔮 `POST /api/predict/`
@@ -141,3 +140,20 @@ Output is saved in `datasets/mental_health_dummy_data.csv`.
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
 ```
+
+---
+
+### 📊 Evaluation
+
+The model was trained on randomly generated data for demonstration purposes. Evaluation metrics on real-world data are recommended for production use.
+
+---
+
+## ✅ Future Improvements
+
+- Replace dummy data with anonymized real assessments for better model accuracy.
+- Integrate clustering for user behavior segmentation.
+- Implement authentication and user history tracking.
+- Add Swagger/OpenAPI documentation.
+
+---
