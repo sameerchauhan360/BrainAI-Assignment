@@ -17,7 +17,7 @@ The system incorporates machine learning models trained to analyze user response
 - scikit-learn, pandas, numpy
 - Railway (for deployment)
 
-> 🚀 **Live API URL**: [_[Add your deployed Railway URL here]_](https://brainai-project.up.railway.app/api/predict/)
+> 🚀 **Live API URL**: https://brainai-project.up.railway.app/api/predict/
 
 > 🧠 Note: Recommendation logic is handled in the frontend. This repository is limited to ML-based prediction and API delivery.
 
@@ -27,7 +27,7 @@ Follow these steps to set up and run the project locally:
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/<your-username>/brainai-assignment.git](https://github.com/sameerchauhan360/BrainAI-Assignment.git)
+git clone https://github.com/sameerchauhan360/BrainAI-Assignment.git
 cd brainai-assignment
 ```
 ### 2. Create and Activate a Virtual Environment
@@ -37,24 +37,29 @@ python -m venv venv
 venv\Scripts\activate
 ```
 # On macOS/Linux
+```
 python3 -m venv venv
 source venv/bin/activate
+```
 
 ### 3. Install Dependencies
+```
 pip install -r requirements.txt
+```
 
 ### 4. Run Database Migrations
+```
 python manage.py migrate
+```
 
 ### 5. Run the Server
+```
 python manage.py runserver
-
-🧪 Notes:
-This project uses SQLite3 as the default database.
-
-ML model files (mental_health_model.pkl, label_encoder.pkl) are pre-trained and loaded during API calls.
-
-The project is deployed via Railway [(add the live link if available).](https://brainai-project.up.railway.app/api/predict/)
+```
+## 🧪 Notes:
+- This project uses SQLite3 as the default database.
+- ML model files (mental_health_model.pkl, label_encoder.pkl) are pre-trained and loaded during API calls.
+- The project is deployed via Railway [(add the live link if available).](https://brainai-project.up.railway.app/api/predict/)
 
 ## 📡 API Documentation
 
@@ -77,21 +82,25 @@ Accepts user questionnaire responses and returns a predicted mental health statu
 {
   "responses": [3, 2, 0, 1, 4, 2, 1, 3, 0, 2, 1, 0, 4, 3, 1, 2]
 }
+```
 - responses: A list of 16 integer values representing answers to PHQ-9 and GAD-7 questions combined.
 
-###Response:
+### Response:
+```
 {
     "mental_health_status": "Severe"
 }
-
+```
 ### Validation Errors:
+```
 {
   "error": "Invalid no. of responses. Expected 16."
 }
-🛑 Authentication
+```
+### 🛑 Authentication
 - No authentication is required for this endpoint.
 
-🗂 Additional Notes:
+### 🗂 Additional Notes:
 - Predictions are based on a pre-trained ML model (mental_health_model.pkl) and use a label encoder (label_encoder.pkl).
 - All responses are saved in the database via the AssessmentResponse model.
 - Recommendations based on the prediction are handled by the frontend application, not this API.
@@ -102,7 +111,7 @@ The project uses environment variables for configuration. Create a `.env` file i
 
 ```env
 SECRET_KEY=your-secret-key-here
-
+```
 ## 🧠 ML Model Development & Training
 
 The system uses a machine learning classification model to predict a user's mental health status based on their responses to 16 standardized questionnaire items (PHQ-9 + GAD-7).
@@ -131,3 +140,4 @@ Output is saved in `datasets/mental_health_dummy_data.csv`.
 ```python
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
+```
