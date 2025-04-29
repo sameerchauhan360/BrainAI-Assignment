@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: brainai_project
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn brainai_project.wsgi:application"
+    envVars:
+          - key: SECRET_KEY
+            value: your-secret-key-here
+    staticPublishPath: staticfiles

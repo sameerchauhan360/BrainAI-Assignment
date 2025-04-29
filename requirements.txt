@@ -1,0 +1,10 @@
+django
+pandas
+numpy
+scikit-learn
+joblib
+djangorestframework
+streamlit
+psycopg2
+gunicorn
+whitenoise
